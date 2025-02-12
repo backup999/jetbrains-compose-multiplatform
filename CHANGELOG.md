@@ -13,25 +13,26 @@ _Changes since 1.8.0-alpha02_
 
 ### Multiple Platforms
 
-- [IdlingResource](https://developer.android.com/reference/kotlin/androidx/compose/ui/test/IdlingResource) inteface was moved from commonMain to android and desktop source sets. The related experimental methods of [ComposeUiTest](https://developer.android.com/reference/kotlin/androidx/compose/ui/test/ComposeUiTest) were moved too. They are not available for Web and iOS anymore. Consider using [waitUntil function][(https://developer.android.com/reference/kotlin/androidx/compose/ui/test/ComposeUiTest#waitUntil(kotlin.String,kotlin.Long,kotlin.Function0)) as an alternative](https://github.com/JetBrains/compose-multiplatform-core/pull/1822). Note: it's a breaking change only for Web and iOS, but not for Desktop and Android
+- [IdlingResource](https://developer.android.com/reference/kotlin/androidx/compose/ui/test/IdlingResource) interface was moved from commonMain to android and desktop source sets. The related experimental methods of [ComposeUiTest](https://developer.android.com/reference/kotlin/androidx/compose/ui/test/ComposeUiTest) were moved too. They are not available for Web and iOS anymore. Consider using [waitUntil function][(https://developer.android.com/reference/kotlin/androidx/compose/ui/test/ComposeUiTest#waitUntil(kotlin.String,kotlin.Long,kotlin.Function0)) as an alternative](https://github.com/JetBrains/compose-multiplatform-core/pull/1822). Note: it's a breaking change only for Web and iOS, but not for Desktop and Android
 
 ### iOS
 
-- [Experimental classes CupertinoScrollDecayAnimationSpec and CupertinoOverscrollEffect are removed from public API](https://github.com/JetBrains/compose-multiplatform-core/pull/1806)
+- [Experimental classes `CupertinoScrollDecayAnimationSpec` and `CupertinoOverscrollEffect` are removed from public API](https://github.com/JetBrains/compose-multiplatform-core/pull/1806)
 
 ## Features
 
 ### Multiple Platforms
 
-- [Adopt a new Clipboard interface with suspend functions, which work correctly on all targets including Web](https://github.com/JetBrains/compose-multiplatform-core/pull/1796). The ClipboardManager was deprecated because it was not possible to correctly implement it for Web
+- [Update skia to m132](https://github.com/JetBrains/compose-multiplatform-core/pull/1823)
+- [Adopt a new `Clipboard` interface with suspend functions, which work correctly on all targets including Web](https://github.com/JetBrains/compose-multiplatform-core/pull/1796). The `ClipboardManager` was deprecated because it was not possible to correctly implement it for Web
 
 ### iOS
 
 - [Support VoiceControl on iOS](https://github.com/JetBrains/compose-multiplatform-core/pull/1780)
-- [AccessibilitySyncOptions removed](https://github.com/JetBrains/compose-multiplatform-core/pull/1780). The accessibility tree is built on demand
+- [`AccessibilitySyncOptions` removed](https://github.com/JetBrains/compose-multiplatform-core/pull/1780). The accessibility tree is built on demand
 - [Calculate the order and location of semantic elements in the same way as it's done on Android](https://github.com/JetBrains/compose-multiplatform-core/pull/1809)
-- [Support UIAccessibilityContainerTypeSemanticGroup for traversal groups](https://github.com/JetBrains/compose-multiplatform-core/pull/1809)
-- [Compose works correctly with nested UIScrollViews, as well as within UIScrollViews](https://github.com/JetBrains/compose-multiplatform-core/pull/1818)
+- [Support `UIAccessibilityContainerTypeSemanticGroup` for traversal groups](https://github.com/JetBrains/compose-multiplatform-core/pull/1809)
+- [Compose works correctly with nested `UIScrollView`s, as well as within `UIScrollView`s](https://github.com/JetBrains/compose-multiplatform-core/pull/1818)
 - [Added the ability to close modal Compose view controllers](https://github.com/JetBrains/compose-multiplatform-core/pull/1818) (with non-scrollable content on them) with a swipe gesture
 
 ## Fixes
@@ -43,12 +44,13 @@ _Changes since 1.8.0-alpha02_
 ### Multiple Platforms
 
 - [Fix light source position for shadow rendering to match the Material specification and Android behavior](https://github.com/JetBrains/compose-multiplatform-core/pull/1784)
+- [Fix inconsistency between Android and Desktop in `placeWithLayer` scale application: offset is not scaled now](https://github.com/JetBrains/compose-multiplatform-core/pull/1784) (Android behavior)
 
 ### iOS
 
 - [Performance issues when iOS screen reader is active fixed](https://github.com/JetBrains/compose-multiplatform-core/pull/1780)
 - [Fixed issues where the interactive pop gesture would stop working](https://github.com/JetBrains/compose-multiplatform-core/pull/1818)
-- [Fixes an issue where it's not possible to close the UIMenu that appears over the Compose content](https://github.com/JetBrains/compose-multiplatform-core/pull/1818)
+- [Fixes an issue where it's not possible to close the `UIMenu` that appears over the Compose content](https://github.com/JetBrains/compose-multiplatform-core/pull/1818)
 - [Fix touches tracking for multitouch gestures](https://github.com/JetBrains/compose-multiplatform-core/pull/1827)
 
 ### Desktop
@@ -60,7 +62,7 @@ _Changes since 1.8.0-alpha02_
 
 ### Web
 
-- [The BasicTextField2 handles browser copy/cut/paste events correctly now](https://github.com/JetBrains/compose-multiplatform-core/pull/1795). Previously, they were ignored
+- [The `BasicTextField` handles browser copy/cut/paste events correctly now](https://github.com/JetBrains/compose-multiplatform-core/pull/1795). Previously, they were ignored
 
 ## Dependencies
 
